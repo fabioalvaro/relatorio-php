@@ -38,7 +38,7 @@ Projeto para estudar relatórios em php
     configurada para MySQL), ler o conteúdo arquivo jrxml e junto com a
     classe tcpdf, gerar o relatório em PDF.
 
-    
+    <img src="docs/images/setup_db.png">
 
 
 # ENTENDENDO O QUE FOI USADO NO PROJETO
@@ -122,11 +122,17 @@ Projeto para estudar relatórios em php
 # INSTALANDO O PROJETO
 
 1) Fazer git clone 
+
 2) Rodar script  banco/db_relatorio_php.sql
+
 3) Dar permissão: # chmod 777 relatorio-php/ -R
+
 4) Acessar o link: http://localhost/relatorio-php/
+
 5) Preencher os campos 
+
 6) Clicar no botão Enviar
+
 7) Pronto! :) você deverá ver o PDF
 
 
@@ -134,11 +140,19 @@ Projeto para estudar relatórios em php
 # FONTES UTILIZADAS NO PROJETO
 
 http://imasters.com.br/artigo/15736/php/usando-o-ireport-como-gerador-de-relatorios-para-php/?trace=1519021197&source=single
+
 https://www.vivaolinux.com.br/dica/Relatorios-do-iReport-no-PHP-com-PHPJasperXML
+
 http://chathurangat.blogspot.com.br/2012/03/jasperreports-with-php.html
+
 http://blog.ibusplus.com/2013/06/instalacion-de-ireport-en-linux-la.html
+
 http://javafree.uol.com.br/artigo/3154/Tutorial-de-IREPORT.html
+
 http://www.fpdf.org/
+
 http://community.jaspersoft.com/project/ireport-designer/releases 
+
 http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk7-downloads-1880260.html
+
 http://www.simitgroup.com/?q=PHPJasperXML
