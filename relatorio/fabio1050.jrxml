@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fabio1050" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3bf5f21-7fe9-4b40-8aee-2410942d019a">
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     erp_parceiro.`id_parceiro` AS erp_parceiro_id_parceiro,
+     erp_parceiro.`id_usuario` AS erp_parceiro_id_usuario,
+     erp_parceiro.`id_parceiro_setor` AS erp_parceiro_id_parceiro_setor,
+     erp_parceiro.`id_parceiro_tipo` AS erp_parceiro_id_parceiro_tipo,
+     erp_parceiro.`limite_credito_total` AS erp_parceiro_limite_credito_total,
+     erp_parceiro.`limite_credito_vencido` AS erp_parceiro_limite_credito_vencido,
+     erp_parceiro.`limite_credito_a_vencer` AS erp_parceiro_limite_credito_a_vencer,
+     erp_parceiro.`bloqueado` AS erp_parceiro_bloqueado,
+     erp_parceiro.`codigo_antt` AS erp_parceiro_codigo_antt,
+     erp_parceiro.`obs` AS erp_parceiro_obs,
+     erp_parceiro.`enderecoweb` AS erp_parceiro_enderecoweb,
+     erp_parceiro.`dt_cadastro` AS erp_parceiro_dt_cadastro,
+     erp_parceiro.`dt_alteracao` AS erp_parceiro_dt_alteracao,
+     erp_parceiro.`stat` AS erp_parceiro_stat
+FROM
+     `erp_parceiro` erp_parceiro
+WHERE
+     stat = 0]]>
+	</queryString>
+	<field name="erp_parceiro_id_parceiro" class="java.lang.Integer"/>
+	<field name="erp_parceiro_dt_cadastro" class="java.sql.Timestamp"/>
+	<field name="erp_parceiro_stat" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="456" y="0" width="99" height="132" uuid="89b3261e-3444-47e4-b1f3-18f7240daeff"/>
+				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="37ae2323-f498-48fa-b884-1818b1791ee1"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="b2091bbd-24cb-4505-8dbe-243d053c5b8b"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry Title]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="15a29338-1a2a-48cc-8503-fe48d3466ca5"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry SubTitle]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="7e08adf2-3bc9-4718-9abd-ec415da4438b"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="0f096c5c-dfac-44d1-ad93-d83fb8158656"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="185" height="18" forecolor="#000000" uuid="16553634-46a2-4d8c-860f-0688c5c72066"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[erp_parceiro_id_parceiro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="7" width="185" height="18" forecolor="#000000" uuid="cacef1d7-36f2-407b-98c2-2b144ef33302"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[erp_parceiro_dt_cadastro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="7" width="185" height="18" forecolor="#000000" uuid="8b04d642-3adc-4f04-a012-b0caf3ec64ec"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[erp_parceiro_stat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="a1c0ba24-f8f8-4223-a448-b3b7a277158b"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="185" height="18" uuid="80301aac-39d3-492b-b88e-277a6fb93ce4"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{erp_parceiro_id_parceiro}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="185" y="0" width="185" height="18" uuid="6b1113e5-37a3-40ee-99c3-fe59c4c21cd7"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{erp_parceiro_dt_cadastro}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="370" y="0" width="185" height="18" uuid="40f5cd52-4df4-497b-aec7-e7e906ce868e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{erp_parceiro_stat}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="b2692a6d-9cd9-4c16-95aa-31c063af1c89"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="28087207-c5b3-4935-97a2-50641addb4cf"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="0cc66e15-71a2-4a2e-beb3-3434ad3f48cd"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="c039d47f-2d43-4fed-ba25-9ea2af0d4e29"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="4e29e026-8934-4d8a-bd48-9c15f27ff237"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
