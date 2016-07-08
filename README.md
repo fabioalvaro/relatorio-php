@@ -38,8 +38,9 @@ Projeto para estudar relatórios em php
     configurada para MySQL), ler o conteúdo arquivo jrxml e junto com a
     classe tcpdf, gerar o relatório em PDF.
 
-    <img src="docs/images/setup_db.png">
+    
 
+<img src="docs/images/setup_db.png">
 
 # ENTENDENDO O QUE FOI USADO NO PROJETO
 
