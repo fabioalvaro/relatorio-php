@@ -1,7 +1,7 @@
 # relatorio-php
 Projeto para estudar relatórios em php
 
-<img src="relatorio-php/docs/images/splash.png">
+<img src="docs/images/splash.png">
 
 
 # RESUMÃO SOBRE iREPORT e PHPJASPERXML
